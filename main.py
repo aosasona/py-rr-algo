@@ -11,7 +11,8 @@ def sim_round_robin(processes, clock_freq):
     if len(remaining_processes) == 0:
       print('All processes have now completed running! :)')
       break
-    for idx, process in enumerate(processes):
+    for idx in remaining_processes:
+      process = processes[idx]
       if remaining_processes.count(idx) == 0 or process['ctc'] == 0:
         continue
       print('[running]', process['name'])
